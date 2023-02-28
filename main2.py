@@ -1,3 +1,4 @@
+"laba 2"
 def q0():
     a = int(input())
     if a >= 36:
