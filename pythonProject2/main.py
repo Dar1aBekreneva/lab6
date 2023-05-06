@@ -13,5 +13,24 @@ def q2():
     for i in n:
         s += p[i.lower()]
     print("summ: ", s)
+    
+def q3():
+    import random
+    students = {"Иванов", "Петров", "Смирнов", "Сидоров", "Васильев", "Кузнецов", "Попов", "Федоров", "Лебедев", "Семенов"}
+    languages = {"Русский", "Английский", "Французский", "Немецкий", "Китайский"}
+    ls = {}
 
+    for st in students:
+        c = random.randint(1,3)
+        ls[st] = random.sample(list(languages), c)
+
+    unique = set()
+    for i in ls:
+        unique = unique.union(set(ls[i]))
+
+    print("различные языки, которые знают студенты: ", *sorted(unique), {len(unique)})
+    china = [i for i in ls if "Китайский" in ls[i]]
+    print("студенты, знающие китайский: ", *china)
+    
+    
 q1()
